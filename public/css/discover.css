@@ -1,0 +1,30 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	color:black;
+}
+.line{
+	border-top: 1px solid silver;
+	border-bottom: 1px solid silver;
+	height: 10px;
+	background: #F2F2F2;
+}
+.lightFont{
+	font-size: xx-small;
+	color: silver;
+}
+
+.box{
+	width: 35px;
+	height: 18px;
+	border: solid 1px orange;
+	border-radius: 1px;
+	font-family: 微软雅黑;
+	color: #AFAFAF;
+	font-size: 13px;
+	line-height: 18px;
+	text-align: center;
+	margin-left: 70px;
+	margin-top: -30px;
+}
+

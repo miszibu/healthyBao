@@ -1,0 +1,169 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.rightText{
+	font-size: small;
+	font-weight: 100;
+	color: dimgray;
+}
+.orangeText {
+	font-size: small;
+	color: orange;
+	font-weight: 100;
+}
+.deliver{
+	margin: 0;
+}
+/*确认订单*/
+.makesure{
+	height: 50px;
+	background: #3191E8;
+}
+.fa-arrow-left{
+	color: white;
+	margin-left: 2%;
+}
+.makesure span{
+	color: #fff;
+	font-size: large;
+	margin-left: 20px;
+}
+/*收货地址*/
+
+.location{
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #D1CED9;
+	background-color: lightgoldenrodyellow;
+}
+.fa-map-marker{
+	color: #3999E3;
+	padding-left: 40px;
+}
+.location span{
+	font-size:44px;
+	padding-left: 48px;
+}
+
+/*底部图标*/
+.icon-1{
+	float: left;
+	z-index: 160px;
+	margin-top: -125px;
+}
+.line-color{
+	background: #EEEEEC;
+	height: 8px;
+	border-top: 1px solid #D1CED9;
+	border-bottom: 1px solid #D1CED9;
+}
+/*支付部分*/
+.payfor h1{
+	padding-left: 40px;
+	padding-top: 50px;
+	font-size: 50px;
+	color: #353535;
+	font-family: 微软雅黑；
+}
+.icon-2{
+	float: right;
+	margin-top: -50px;
+}
+.quan{
+	padding: 3px;
+	height: 20px;
+	background: #2B8AF6;
+	border-radius: 1px;
+	font-size:13px;
+	line-height: 15px;
+	float: left;
+	margin-left: 20px;
+}
+.youhui{
+	padding: 3px;
+	height: 20px;
+	background: orangered;
+	border-radius: 1px;
+	font-size:13px;
+	line-height:20px;
+	float: left;
+	margin-left: 16px;
+}
+.cash-on-delivery h1{
+	padding-left: 40px;
+	padding-top: 40px;
+	font-size: 50px;
+	color: #353535;
+	font-family: 微软雅黑；
+}
+.detailBar{
+	height: 10%;
+	padding: 5px;
+	border-bottom: 1px solid #D1CED9;
+}
+/*发票抬头*/
+ .invoice{
+	color: #DDDDDD;
+}
+.invoice h5{
+	color: #DDDDDD;
+}
+.invoice .fa-angle-right{
+	color: #DDDDDD;
+}
+.preferential h1{
+	color: #CACACA;
+	text-decoration: line-through;
+}
+.preferential h2{
+	color: #964E5A;
+}
+.preferential span{
+	color: #CACACA;
+	text-decoration: line-through;
+}
+.privilege{
+	height: 40px;
+	background: #EEEEEE;
+	line-height: 30px;
+	border-bottom: 1px solid #D1CED9;
+}
+.privilege span{
+	margin-right: 5%;
+	float: right;
+	color: #2B8BE1;
+	font-size: 10px;
+}
+.locat{
+	height: 70px;
+	background: #FEF8D8;
+	color: #C18D54;
+	line-height: 70px;
+	padding-left: 40px;
+	font-size: 40px;
+}
+.last{
+	height: 96px;
+}
+.column8-1{
+	padding-left: 10%;
+	background: #4E4E4E;
+	line-height: 40px;
+	height: 40px;
+}
+#last-1{
+	font-size: 20px;
+	color: #fff;
+}
+#last-2{
+	font-size: 15px;
+	color: #9D9D9D;
+}
+.column8-2{
+	background: #5AD27B;
+	line-height: 40px;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+}

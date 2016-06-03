@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="healthyBaoApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/discover.css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet"/>
+    <script src="../lib/js/jquery.min.js"></script>
+    <script src="../lib/js/bootstrap.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script src="../js/healthyBaoCtrl.js"></script>
+    <title>discover</title>
+</head>
+<body ng-controller="shopListCtrl">
+    <nav class="navbar  navbar-fixed-top" role="navigation" style="background-color:dodgerblue;width: 100%;padding-top: 5px">
+        <h4 class="col-xs-3" style="color: white" ng-click="returnDefaultPage()">
+            <i class="fa fa-chevron-left" style="color: white"></i>
+            {{title}}</h4>
+    </nav>
+
+    <div ng-repeat="shop in shopList" >
+        <div class="col-xs-12" href="#" role="button" >
+            <div class="col-xs-3 store" >
+                <img src="{{shop.image}}" style="height: 100%;width: 100%;"/>
+            </div>
+            <div class="col-xs-8" style="padding-left: 0">
+                <h4 style="margin: 0;font-weight: 700;display: inline-block">{{shop.title}}</h4>
+					<span style="color: red;display: inline-block;float: right;margin:0;font-size: small">￥
+						<span style="font-size: large">{{shop.leastMoney}}</span>
+						<span style="color:black">元起送</span>
+					</span>
+                <p style="color: red;" style="display: inline-block">
+                    <i class="fa fa-star" style="color: gold" ng-if="shop.score>0.5"></i>
+                    <i class="fa fa-star" style="color: gold" ng-if="shop.score>1.5"></i>
+                    <i class="fa fa-star" style="color: gold" ng-if="shop.score>2.5"></i>
+                    <i class="fa fa-star" style="color: gold" ng-if="shop.score>3.5"></i>
+                    <i class="fa fa-star" style="color: gold" ng-if="shop.score>4.5"></i>
+                    <i class="fa fa-star-half-o" style="color: gold" ng-if="shop.score%1==0.5"></i>
+                    {{shop.score}}
+                    <span style="color: #000000;font-size: small;">月销{{shop.saleNum}}单</span>
+						<span style="color: red;display: inline-block;float: right;margin:0;font-size: small">￥
+							<span >{{shop.leastMoney}}</span>
+							<span style="color:black">配送费</span>
+						</span>
+                </p>
+                <p style="color: gray;">{{shop.avgSendTime}}/{{shop.distance}}</p>
+            </div>
+            <hr class="col-xs-12"/>
+        </div>
+    </div>
+    <nav class="navbar-fixed-bottom"  style="height: 50px;">
+        <div class="container-fluid bg-primary">
+            <a class="col-xs-3 icon" href="../templates/healthBao_1.html" role="button">
+                <div>
+                    <img src="../img/hanbao.png" width="20px" height="20px" />
+                    <p style="color:white">外卖</p>
+                </div>
+            </a>
+            <a class="col-xs-3 icon" href="../templates/healthBao_2.html" role="button">
+                <div>
+                    <img src="../img/caidan.png" width="20px" height="20px" />
+                    <p style="color:white">订单</p>
+                </div>
+            </a>
+            <a class="col-xs-3 icon" href="../templates/healthBao_3.html" role="button">
+                <div>
+                    <img src="../img/faxian.png" width="20px" height="20px" />
+                    <p style="color:white">发现</p>
+                </div>
+            </a>
+            <a class="col-xs-3 icon" href="#" role="button">
+                <div>
+                    <img src="../img/wode.png" width="20px" height="20px" />
+                    <p style="color:white">账户</p>
+                </div>
+            </a>
+        </div>
+    </nav>
+</div>
+</body>
+</html>

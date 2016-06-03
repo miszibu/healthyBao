@@ -1,0 +1,61 @@
+.topBar{
+	background-color:dodgerblue;width: 100%;padding: 5px 20px 0 0;color: white;margin: 0;
+}
+/*已完成订单*/
+#first-1{
+	padding:0  0 0 5%;
+	font-size: 17px;
+	font-family: 微软雅黑;
+	color: #383838;
+}
+#first-2{
+	font-size: 17px;
+	font-family: 微软雅黑;
+	color: #9C9C9C;
+}
+
+.fa-trash{
+	color: #9C9C9C;
+}
+.fa-angle-right{
+	color:#9C9C9C;
+}
+
+/*点的东西*/
+#name{
+	font-weight: 700;
+}
+.food{
+	padding-left: 15px;
+	font-size: 15px;
+	font-family: 微软雅黑;
+	color: #9C9C9C;
+}
+.food-1{
+	padding-left: 220px;
+	padding-top: 15px;
+}
+.line{
+	height: 1px;background-color: whitesmoke;
+}
+/*x1部分*/
+
+#money{
+	font-size: 20px;
+	color:black;
+}
+.again{
+	width: 30%;
+	height: 15%;
+	border: 1px solid #338BD3;
+	border-radius: 5px;
+	text-align: center;
+	font-size: 20px;
+	color: #338BD3;
+}
+/*最后显示部分*/
+.last{
+	text-align: center;
+	font-size: 20px;
+}
+ /*切换栏*/

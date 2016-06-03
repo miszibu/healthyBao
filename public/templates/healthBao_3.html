@@ -1,0 +1,75 @@
+<link href="css/discover.css" rel="stylesheet"/>
+<body >
+	<nav class="navbar  navbar-fixed-top" role="navigation" style="background-color:dodgerblue;width: 100%;padding-top: 5px">
+		<h4 class="col-xs-3" style="color: white">发现</h4>
+	</nav>
+	<div >
+		<div class="row" style="margin-top: 50px;height: 170px;position: relative" >
+	    	<div class="col-xs-5" style="padding: 0 0 0 10%;border-right: 2px solid whitesmoke;height: 100%" >
+	    		<h3 style="color: orangered">积分商城</h3>
+	    		<h5 class="lightFont">0元好货在这里！</h5>
+				<img src='../img/discover-logo-1.jpg' style="width: 70px;height: 70px">
+	    	</div>
+	    	<div class="col-xs-7 " style="border-bottom: 1px solid whitesmoke">
+	    		<h3 style="color: red">热卖美食</h3>
+	    		<h5 class="lightFont">好吃好喝的都在这</h5>
+				<img src='../img/discover-logo-2.jpg' style="width: 50px;height: 50px;position: absolute;right: 10%;top: 20%">
+	    	</div>
+	    	<div class="col-xs-7 ">
+	    		<h3 style="color: green">有红包快抢</h3>
+	    		<h5 class="lightFont">74元不谢</h5>
+				<img src='../img/discover-logo-3.jpg' style="width: 50px;height: 50px;position: absolute;right: 10%;top: 20%">
+	    	</div>
+		</div>
+		<div class="line"></div>
+		<div class='row' style="position: relative;padding: 0 10%">
+			<h3 style="color: #2aabd2">成为饿了么会员</h3>
+			<h5 class="lightFont">全城免费配送，更多会员特权等你发现</h5>
+			<img src='../img/discover-logo-4.jpg' style="width: 50px;height: 50px;position: absolute;right: 10%;top: 20%">
+		</div>
+		<div class="line"></div>
+		<div class="row" style="padding: 0 10%;border-bottom: 1px solid silver;height: 30px;line-height: 30px">
+			<span>限时好礼</span>
+			<span style="float: right;" class="lightFont">更多好礼 <i class="fa fa-angle-right fa-lg"></i></span>
+		</div>
+		<div class="row">
+			<div class="col-xs-6 column6-1" style="padding: 0 10%;height:250px;border-right: 1px solid silver" ng-repeat="price in priceList">
+					<h5 style="font-size: x-small">{{price.title}}</h5>
+					<h5 class="lightFont">{{price.description}}</h5>
+					<h5><span style="color: orangered">{{price.value}}</span>积分</h5>
+					<div class='box'>抽奖</div>
+					<img src='{{price.img}}' style="width: 80%;height: 150px;left:10%;top: 100%" >
+			</div>
+		</div>
+
+		<nav class="navbar navbar-default navbar-fixed-bottom"  style="height: 50px;">
+			<div class="container-fluid bg-primary">
+				<div class="col-xs-3 icon" role="button" ng-click="goPage(1)">
+					<div>
+						<img src="../img/hanbao.png" width="20px" height="20px" />
+						<p style="color:white">外卖</p>
+					</div>
+				</div>
+				<div class="col-xs-3 icon"  role="button" ng-click="goPage(2)">
+					<div>
+						<img src="../img/caidan.png" width="20px" height="20px" />
+						<p style="color:white">订单</p>
+					</div>
+				</div>
+				<div class="col-xs-3 icon" role="button" >
+					<div >
+						<img src="../img/faxian.png" width="20px" height="20px" />
+						<p style="color:white">发现</p>
+					</div>
+				</div>
+				<div class="col-xs-3 icon"  role="button" ng-click="goPage(4)">
+					<div>
+						<img src="../img/wode.png" width="20px" height="20px" />
+						<p style="color:white">账户</p>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+</body>
+</html>

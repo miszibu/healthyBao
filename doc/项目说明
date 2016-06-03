@@ -1,0 +1,5 @@
+前端代码全部在public目录之下
+    网页页面 全部放在放在 public/templates 目录下
+    css img js 等放置对应目录
+    lib目录存放所需 框架/库
+    data 放置所需调用的数据json

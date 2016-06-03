@@ -1,0 +1,55 @@
+<link href="css/ordered.css" rel="stylesheet"/>
+<body >
+		<nav class="navbar  navbar-fixed-top topBar" role="navigation" >
+			<h4 class="col-xs-3" >订单</h4>
+			<h4 style="float: right">早餐订单</h4>
+		</nav>
+		<div ng-repeat="order in orderList">
+			<hr class="row rowLine " style=";margin: 49px 0 10px 0;"/>
+			<div class='row'>
+				<span class="col-xs-3" id='first-1'>订单已完成</span>
+				<span class="col-xs-7" id='first-2'>- {{order.showTime}}</span>
+				<i class="fa fa-trash fa-2x col-xs-2 "></i>
+				<img src="../img/humberger.jpg" class="col-xs-3">
+				<h4 id='name' class="col-xs-9">{{order.bussinessname}}  <i class="fa fa-angle-right fa-lg"></i></h4>
+				<div class="col-xs-9 line" ></div>
+				<div class="line"></div>
+				<div ng-repeat="food in order.commodity">
+				<p class='food col-xs-9'>{{food.commodityname}} <spam style="float: right;">X{{food.commoditynum}}</spam></p>
+				</div>
+				<div class="col-xs-12 line" ></div>
+				<p class="col-xs-12" ><span style="float: right">共{{order.commodity.length}}份，实付<span id='money'>¥{{order.totalmoney}}</span></span></p>
+				<div class="col-xs-12 "><span class="again" style="float: right">再来一单</span></div>
+			</div>
+		</div>
+
+		<nav class="navbar navbar-default navbar-fixed-bottom"  style="height: 50px;">
+			<div class="container-fluid bg-primary">
+				<div class="col-xs-3 icon" role="button" ng-click="goPage(1)">
+					<div>
+						<img src="../img/hanbao.png" width="20px" height="20px" />
+						<p style="color:white">外卖</p>
+					</div>
+				</div>
+				<div class="col-xs-3 icon"  role="button" >
+					<div>
+						<img src="../img/caidan.png" width="20px" height="20px" />
+						<p style="color:white">订单</p>
+					</div>
+				</div>
+				<div class="col-xs-3 icon" role="button" ng-click="goPage(3)">
+					<div >
+						<img src="../img/faxian.png" width="20px" height="20px" />
+						<p style="color:white">发现</p>
+					</div>
+				</div>
+				<div class="col-xs-3 icon"  role="button" ng-click="goPage(4)">
+					<div>
+						<img src="../img/wode.png" width="20px" height="20px" />
+						<p style="color:white">账户</p>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+</body>

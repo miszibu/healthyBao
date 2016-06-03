@@ -1,0 +1,121 @@
+ <style>
+		*{
+			padding: 0px;
+			margin: 0px;;
+		}
+    	#storeDiv{
+			padding: 0px;
+    	}
+    </style>
+ </head>
+ <body>
+	    <nav class="navbar  navbar-fixed-top" role="navigation" style="background-color:gray;padding-top: 10px;position: relative ">
+		    <a class=" col-xs-8 fa fa-angle-left fa-2x"  style="color: white" ng-click="returnDefaultPage()"></a>
+			<a class=" col-xs-1 fa fa-search fa-2x" style="color: white"></a>
+			<a class=" col-xs-1 fa fa-share-square-o  fa-2x" style="color: white"></a>
+			<a class=" col-xs-1 fa fa-clock-o fa-2x" style="color: white"></a>
+
+
+			<div class="col-xs-4" style="margin-top: 10px;">
+			    <img src="{{currentShop.businessimage}}" width="100px" height="80px"  />
+			</div>
+		    <div class="col-xs-8" id="storeDiv">
+				<p style="color:white;font-family:微软雅黑;font-size: 150%;">
+					{{currentShop.businessname}}
+				</p>
+			    <p style="color:white;font-family:微软雅黑;font-size: 100%;">
+			        {{currentShop.sendmoney}}元起送/{{currentShop.delivermoney}}元配送费/{{currentShop.delivertime}}分钟内送达
+			    </p>
+			    <p style="color:white;font-family:微软雅黑;font-size: 100%;">
+			        商家地址：{{currentShop.businessaddress}}。联系电话：{{currentShop.mobile}}.
+			    </p>
+			</div>
+		</nav>
+    <div class="row"  style="background-color: lightyellow;margin-top: -20px;">
+        <i class="fa fa-twitter col-xs-1" style="color:orange;text-align: center"></i>
+        <p class="col-xs-11" style="color: darkgray;font-size: 12px;margin: 0 ">
+            {{currentShop.announcement}}
+        </p>
+    </div>
+  <!--  <div class="col-xs-2" id="muneCtrl" style="border-style: solid; border-width: 1px;border-color: lightgray;padding: 10px 0px 10px 0px;margin-bottom: 70px;">
+        <a href="#"  role="button">
+        <div style=" color: orange;font-size: 120%;border-bottom-style: solid;border-width: 1px;border-color: lightgray;margin-top:20px;margin-bottom:20px;">热销榜</div>
+        </a>
+        <a href="#"  role="button">
+        <div style="color:darkgray;font-size: 120%;border-bottom-style: solid;border-width: 1px;border-color: lightgray;margin-top:20px;margin-bottom:20px;">轰咖票</div>
+        </a>
+        <a href="#"  role="button">
+        <div style="color:darkgray;font-size: 120%;border-bottom-style: solid;border-width: 1px;border-color: lightgray;margin-top:20px;margin-bottom:20px;">轰咖说</div>
+        </a>
+        <a href="#"  role="button"style="">
+        <div style="color:darkgray;font-size: 120%;border-bottom-style: solid;border-width: 1px;border-color: lightgray;margin-top:20px;margin-bottom:20px;">原味轰咖咖喱饭</div>
+        </a>
+        <a href="#"  role="button">
+        <div style="color:darkgray;font-size: 120%;border-bottom-style: solid;border-width: 1px;border-color: lightgray;margin-top:20px;margin-bottom:20px;">轰咖大招饭</div>
+        </a>
+        <a href="#"  role="button">
+        <div style="color:darkgray;font-size: 120%;border-bottom-style: solid;border-width: 1px;border-color: lightgray;margin-top:20px;margin-bottom:20px;">轰咖加餐主力军</div>
+        </a>
+        <a href="#"  role="button">
+        <div style="color:darkgray;font-size: 120%;margin-top:20px;margin-bottom:20px;">轰咖缤纷酷饮</div>
+        </a>
+    </div>-->
+	<div class="col-xs-12" style=" background-color: whitesmoke;font-family: 微软雅黑;font-size: 120%;color: darkgray;padding-left: 10%;">
+		热销榜
+	</div>
+    <div class="row" style="padding: 0px;margin-bottom: 10px;border-bottom: 1px solid whitesmoke" ng-repeat="food in foodList">
+
+    	<div class="col-xs-12" style="padding: 0px;margin-top: 10px;">
+			<img src="../img/shousi.jpg" class="col-xs-4"/>
+		    <div class="col-xs-8">
+				<p style="color:black;font-family:微软雅黑;font-size: 120%;">
+				    {{food.commodityname}}
+			    </p>
+		        <p style="color:gray;font-family:微软雅黑;font-size: 50%;">
+		            {{food.commoditydescribe}}
+		        </p>
+		        <p style="color: red;" style="display: inline-block">
+					<i class="fa fa-star" style="color: gold" ng-if="shop.score>0.5"></i>
+					<i class="fa fa-star" style="color: gold" ng-if="shop.score>1.5"></i>
+					<i class="fa fa-star" style="color: gold" ng-if="shop.score>2.5"></i>
+					<i class="fa fa-star" style="color: gold" ng-if="shop.score>3.5"></i>
+					<i class="fa fa-star" style="color: gold" ng-if="shop.score>4.5"></i>
+					<i class="fa fa-star-half-o" style="color: gold" ng-if="shop.score%1==0.5"></i>
+					<span style="color: darkgray;">月售{{food.monthlyorder}}份</span>
+			    </p>
+			</div>
+
+		</div>
+		<div class="col-xs-6">
+			<h4 style="color: red;float: right">￥{{food.commodityprice}}</h4>
+		</div>
+		<div class="col-xs-6" style="padding-right: 40px">
+			<i class="fa fa-plus-circle fa-2x" style="color:dodgerblue;float: right" ng-click="plusCurrentNum(food)"></i>
+			<span style="font-size: large;float: right">{{food.num}}</span>
+			<i class="fa fa-minus-circle fa-2x" style="color:darkgray;float: right" ng-click="minusCurrentNum(food)" ng-if="food.num!=0"></i>
+		</div>
+    </div>
+
+    <nav class="navbar navbar-default navbar-fixed-bottom"  style="height: 50px;">
+	    <div class="container-fluid" style="background-color: gray;padding: 0px;">
+		    <i class="fa fa-shopping-cart fa-2x col-xs-1" style="color: whitesmoke;margin-top:10px" ></i>
+			<span class="badge col-xs-1" style="background-color:orangered" ng-if="allFoodNum!=0">{{allFoodNum}}</span>
+			<div class="col-xs-1">
+		        <p style="color: white;font-size: 200%;font-family:微软雅黑;margin-top: 5px">
+		        ￥{{allFoodMoney}}</p>
+		    </div>
+		    <div class="col-xs-5">
+		        <p style="color: lightgray;font-size: 100%;font-family: 微软雅黑;margin-top: 15px;margin-left: 30px;">
+		        |另需配送费￥{{currentShop.delivermoney}}
+		        </p>
+		    </div>
+		    <div class="col-xs-4"style="background-color:limegreen;text-align: center;padding-bottom: 10px;float: right;" ng-click="goOrderForm()">
+		        <a style=" color: white;font-size: 200%;font-family: 微软雅黑;margin-top: 10px;">
+		        去结算
+		        </a>
+		    </div>
+		</div>
+	</nav>
+    
+ </body>
+</html>

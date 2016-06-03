@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="../css/order.css">
+<body >
+	<nav class="navbar  navbar-fixed-top makesure" role="navigation" style="background-color:dodgerblue;width: 100%;padding: 10px;">
+		<i class="fa fa-arrow-left fa-2x" ng-click="goShopDetail()"></i>
+		<span>确认订单</span>
+	</nav>
+	<div class="row" style="margin-top: 50px;height: 70px" >
+		<div class="col-xs-2 fa fa-map-marker fa-2x" style="height: 100%;padding:15px 0 0 40px "></div>
+		<h4 class="col-xs-10">{{user.name}}  {{user.mobile}}</h4>
+		<p class="col-xs-10" style="font-size: small">{{address.address}}</p>
+		<img src="../img/order-logo-1.jpg" class="col-xs-12">
+	</div>
+	<div class='line-color'></div>
+	<div class="container-fluid row" style="padding: 10px ">
+		<h4 class="col-xs-3" style="margin: 0 0 0 5%;padding: 0">在线支付</h4>
+		<h5 class="col-xs-6" style="margin: 0;">(商家仅支持在线支付)</h5>
+		<img src="../img/order-logo-2.jpg" class="col-xs-3" style="height:30px;width: 30px;padding: 0">
+		<span class=" quan col-xs-4 col-md-2 col-lg-1">有2红包可用</span>
+		<span class=" youhui col-xs-4 col-md-2 col-lg-1">立减8.40元</span>
+	</div>
+	<div class="line-color"></div>
+	<div class="container-fluid row detailBar">
+		<h5 class="col-xs-3">送达时间</h5>
+		<h5 style="float: right;margin-right: 20px;" class="rightText">尽快送达 （预计{{arriveTime}}送达)&nbsp&nbsp&nbsp&nbsp&nbsp<i class="fa fa-angle-right fa-1x"></i></h5>
+	</div>
+	<div class="container-fluid row detailBar">
+		<h5 class="col-xs-3">订单备注</h5>
+		<h5 style="float: right;margin-right: 20px;" class="rightText">口味、偏好等其他需求 &nbsp&nbsp&nbsp&nbsp&nbsp<i class="fa fa-angle-right fa-1x"></i></h5>
+	</div>
+	<div class="container-fluid row detailBar invoice">
+		<h5 class="col-xs-3">发票抬头</h5>
+		<h5 style="float: right;margin-right: 20px;" class="rightText">未满500元，不能开发票 &nbsp&nbsp&nbsp&nbsp&nbsp<i class="fa fa-angle-right fa-1x"></i></h5>
+	</div>
+	<div class='line-color'></div>
+	<div class="container-fluid row detailBar invoice">
+		<h5 class="col-xs-3">红包</h5>
+		<h5 style="float: right;margin-right: 20px;" class="rightText">没有可用红包 &nbsp&nbsp&nbsp&nbsp&nbsp<i class="fa fa-angle-right fa-1x"></i></h5>
+	</div>
+	<div class='line-color'></div>
+	<div class="container-fluid row" ng-repeat="food in orderedFood">
+		<h5 class="col-xs-8">{{food.commodityname}}</h5>
+		<h5 class="col-xs-2 rightText">x{{food.num}}</h5>
+		<h5 class="col-xs-2 rightText">¥{{food.num*food.commodityprice}}</h5>
+		<!--<h5 class="col-xs-8">两时蔬套饭+黑椒鸡排+狮子头...</h5>
+		<h5 class="col-xs-2 rightText">x1</h5>
+		<h5 class="col-xs-2 rightText">¥27</h5>-->
+	</div>
+	<div class="container-fluid row"  style="border-bottom: 1px solid silver;border-top: 1px solid silver">
+		<div class="orangeText">
+			<h5 class="col-xs-10">餐盒费</h5>
+			<h5 class="col-xs-2">¥{{shop.lunchboxmoney}}</h5>
+		</div>
+		<div class="orangeText" >
+			<div class="col-xs-10">
+				<p class="deliver">配送费</p>
+				<p class="deliver" style="color: black">本订单由【蜂鸟配送】提供配送</p>
+				<a class="deliver">会员免配送费></a>
+			</div>
+			<h5 class="col-xs-2" style="height: 40px;line-height: 40px">¥{{shop.delivermoney}}</h5>
+		</div>
+	</div>
+	<div class="container-fluid row"  style="border-bottom: 1px solid silver">
+		<div class="orangeText">
+			<h5 class="col-xs-10">在线支付立减优惠</h5>
+			<h5 class="col-xs-2">-¥7.2</h5>
+		</div>
+		<div class="orangeText" >
+			<div class="col-xs-10">
+				<p class="deliver">不与其他活动同享,惠不能停,7折狂欢</p>
+				<p class="deliver" style="color: black">限每个订单可享1份特价商品优惠</p>
+			</div>
+			<h5 class="col-xs-2" style="height: 20px;line-height: 20px">-¥8.2</h5>
+		</div>
+	</div>
+	<div class='privilege container-fluid row'>
+		<span><i class="fa fa-question-circle fa-lg"></i>优惠说明</span>
+	</div>
+	<div class='location container-fluid row '>
+		<p style="margin-left: 5%">送至：杭州师范大学仓前新校区-博文苑6栋</p>
+	</div>
+	<div class='row' >
+		<div class="col-xs-8 column8-1">
+			<span id="last-1">总计¥{{money}}</span>
+			<span id="last-2">| 已优惠¥8.4</span>
+		</div>
+		<div class="col-xs-4 column8-2" ng-click="payMoney()">
+			确认下单
+		</div>
+	</div>
+</body>
+</html>

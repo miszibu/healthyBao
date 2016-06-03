@@ -1,0 +1,178 @@
+
+    <style>
+		*{
+			padding: 0px;
+			margin: 0px;;
+		}
+    	li{
+    		list-style: none;
+    	}
+    	#addressBtn{
+    		text-align: center;
+			padding: 0px;
+    	}
+    	#searchDiv{
+			background-color: dodgerblue;
+    		margin-top: -20px;
+    	}
+    	#searchBar{
+            margin-top: 10px;
+            margin-left: 30px;
+    	}
+    	.icon{
+    		margin-top: 10px;
+    		height: 90px;
+    		text-align: center;
+    	}
+    	.rowLine{
+    		height: 10px;
+    	}
+    	.store{
+    		margin-left: 20px;
+    	}
+		.icon-white{
+			color: white;
+			padding-top: 5px;
+		}
+    </style>
+ <body>
+ <nav class="navbar  navbar-fixed-top" role="navigation" style="background-color:dodgerblue;padding-top: 20px;position: relative ;width: 100%">
+			<div class=" col-xs-2 icon-white" >
+				<span class="glyphicon glyphicon-map-marker" style="float: right"></span>
+			</div>
+		    <div class="col-xs-8" id="addressBtn" href="#" role="button">
+					<marquee style="color:white;font-size: large">
+						杭州师范大学仓前新校区-超市
+					</marquee>
+			</div>
+			<div class=" col-xs-2 icon-white" >
+				<span class="glyphicon glyphicon-triangle-bottom" style="float: left"></span>
+			</div>
+	</nav>
+
+    <div class="col-xs-12 bg-primary" id="searchDiv">
+		<div class="col-xs-10" id="searchBar">
+			<div class="form-group">
+   				<input type="text" class="form-control" style="text-align: center;"placeholder="请输入商家或商品名称" ng-model="search">
+  			</div>
+		</div>
+    </div>
+
+
+ 	<div ng-if="search.length<1">
+	<div class="container-fluid" style="margin-top: 70px;" >
+	<div class="row" style="margin: auto; margin-bottom: 10px;" >
+		<a class="col-xs-3 icon"   role="button" ng-repeat="item in listName" ng-click="enterShopList(item)" >
+			<img src="{{item.image}}" width="60px" height="60px"  />
+			<p>{{item.name}}</p>
+		</a>
+	</div> 
+
+	<div class="row rowLine " style="background-color: whitesmoke"> </div>
+	
+			<a class="col-xs-4"  role="button" style="border-right: 1px solid gray;">
+				<h4 style="font-family:微软雅黑;color:red;font-size:24px;">9.9元抢</h4>
+				<p style="font-family:微软雅黑;color: #999999;">活动已结束</p>
+				<div style="margin-top: 30px;margin-bottom: 40px;margin-left: -20px">
+					<img src="../img/9.9yuan.jpg" width="120px" height="100px" />
+				</div>
+			</a>
+			
+			<a class="col-xs-8"  role="button" style="height: 100px;border-bottom: 1px solid gray;">
+				<h4 style="font-family:微软雅黑;color: green;font-size:24px;">超大满减</h4>
+				<p style="font-family:微软雅黑;color: gray;">最高20减10</p>
+				<div style="position: absolute;margin-top: -60px;margin-left: 100px;">
+					<img src="../img/manjian.jpg" width="130px" height="80px" />
+				</div>
+			</a>
+			<a class="col-xs-4 "  role="button" style="border-right: 1px solid gray;">
+				<h4 style="font-family:微软雅黑;color: #F98F1C;font-size:24px;">小吃零食</h4>
+				<p style="font-family:微软雅黑;color: gray;">美味小吃</p>
+				<div style=" margin-bottom: 10px; ">
+					<img src="../img/snake.jpg" width="80px" height="50px" />
+				</div>
+			</a>
+			<a class="col-xs-4 ">
+				<h4 style="font-family:微软雅黑;color: #FF4F00;font-size:24px;">热卖美食</h4>
+				<p style="font-family:微软雅黑;color: gray;">附近最火美食</p>
+				<div style="margin-left: 10px; margin-bottom: 10px">
+					<img src="../img/hot.jpg" width="80px" height="50px" />
+				</div>
+			</a>
+		</div>
+
+	<div class="row rowLine bg-primary" style="background-color: whitesmoke"></div>
+</div>
+	<div class="row" >
+		<div class="col-xs-12" style="height:20px;padding: 0 25px">
+			<i class="fa fa-shopping-cart  fa-lg"></i>
+			<h4 style="color: gray; display: inline-block">附近商家</h4>
+		</div>
+		<hr class="col-xs-12" />
+
+		<div ng-repeat="shop in shopList | filter:search|orderBy:shop.saleNum" ng-click="chooseShop(shop)">
+			<div class="col-xs-12" href="#" role="button" >
+				<div class="col-xs-3 store" >
+					<img src="{{shop.businessimage}}" style="height: 100%;width: 100%;"/>
+				</div>
+			   <div class="col-xs-8" style="padding-left: 0">
+					<h4 style="margin: 0;font-weight: 700;display: inline-block">{{shop.businessname}}</h4>
+					<span style="color: red;display: inline-block;float: right;margin:0;font-size: small">￥
+						<span style="font-size: large">{{shop.sendmoney}}</span>
+						<span style="color:black">元起送</span>
+					</span>
+					<p style="color: red;" style="display: inline-block">
+						<i class="fa fa-star" style="color: gold" ng-if="shop.score>0.5"></i>
+						<i class="fa fa-star" style="color: gold" ng-if="shop.score>1.5"></i>
+						<i class="fa fa-star" style="color: gold" ng-if="shop.score>2.5"></i>
+						<i class="fa fa-star" style="color: gold" ng-if="shop.score>3.5"></i>
+						<i class="fa fa-star" style="color: gold" ng-if="shop.score>4.5"></i>
+						<i class="fa fa-star-half-o" style="color: gold" ng-if="shop.score%1==0.5"></i>
+						{{shop.totalscore}}
+						<span style="color: #000000;font-size: small;">月销{{shop.monthlyorder}}单</span>
+						<span style="color: red;display: inline-block;float: right;margin:0;font-size: small">￥
+							<span >{{shop.delivermoney}}</span>
+							<span style="color:black">配送费</span>
+						</span>
+					</p>
+					<p style="color: gray;">{{shop.delivertime}}分钟 / {{shop.distance}}KM</p>
+			   </div>
+			<hr class="col-xs-12"/>
+		</div>
+	</div>
+	<hr class="col-xs-12" />
+
+	</div>
+
+	<nav class="navbar navbar-default navbar-fixed-bottom"  style="height: 50px;">
+	    <div class="container-fluid bg-primary">
+		   <div class="col-xs-3 icon" role="button" >
+		        <div>
+			        <img src="../img/hanbao.png" width="20px" height="20px" />
+			        <p style="color:white">外卖</p>
+			    </div>
+		    </div>
+		    <div class="col-xs-3 icon"  role="button" ng-click="goPage(2)">
+		        <div>
+			        <img src="../img/caidan.png" width="20px" height="20px" />
+			        <p style="color:white">订单</p>
+			    </div>
+		    </div>
+		    <div class="col-xs-3 icon" role="button" ng-click="goPage(3)">
+		        <div >
+			        <img src="../img/faxian.png" width="20px" height="20px" />
+			        <p style="color:white">发现</p>
+			    </div>
+		    </div>
+		    <div class="col-xs-3 icon"  role="button" ng-click="goPage(4)">
+		        <div>
+			        <img src="../img/wode.png" width="20px" height="20px" />
+			        <p style="color:white">账户</p>
+			    </div>
+		    </div>
+		</div>
+	</nav>
+ </div>
+
+ </body>
+

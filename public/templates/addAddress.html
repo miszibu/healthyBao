@@ -1,0 +1,36 @@
+<style>
+    .green{
+        color: limegreen;
+    }
+</style>
+<body >
+<nav class="navbar  navbar-fixed-top topBar" role="navigation"  style="background-color: #2B8AF6;padding-top: 7px">
+    <a class=" col-xs-2 fa fa-angle-left fa-2x"  style="color: white" ng-click="returnAddress()"></a>
+    <h4 class="col-xs-10" style="color: whitesmoke">新增地址</h4>
+</nav>
+<div >
+    <hr class="row rowLine " style=";margin: 49px 0 10px 0;"/>
+    <div class="input-group input-group-lg">
+        <span class="input-group-addon" >联系人</span>
+        <input type="text" class="form-control" placeholder="您的姓名" ng-model="address.name">
+    </div>
+    <div class="row">
+        <i class="col-xs-3"></i>
+        <i class="fa fa-check-circle fa-2x col-xs-3" ng-class="{'green':address.sex=='男'}" ng-click="chooseMan()">男</i>
+        <i class="fa fa-check-circle fa-2x col-xs-3" ng-class="{'green':address.sex=='女'}" ng-click="chooseWomen()">女</i>
+        <i class="col-xs-3"></i>
+    </div>
+    <div class="input-group input-group-lg">
+        <span class="input-group-addon" >联系电话</span>
+        <input type="text" class="form-control" placeholder="您的手机号" ng-model="address.mobile">
+    </div>
+    <div class="input-group input-group-lg">
+        <span class="input-group-addon" >收货地址</span>
+        <input type="text" class="form-control" placeholder="小区/写字楼/学校" ng-model="address.address" >
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon" style="border-radius:2px;background-color:#5cd65c"  ng-click="add()">确定</span>
+    </div>
+</div>
+
+</body>
