@@ -150,7 +150,7 @@ angular.module("app.healthyBaoCtrl", [])
                     $("canvas").remove();//移除背景图
                     $state.go("healthBao_1")
                 }, function (data) {
-                    ionicSuperPopup.show("账号重复", "请重新注册", "error");
+                    ionicSuperPopup.show("注册失败", "请重新注册", "error");
                 })
             }
         };
@@ -256,7 +256,7 @@ angular.module("app.healthyBaoCtrl", [])
                     ionicSuperPopup.show("恭喜您", "下单成功", "success");
                     $state.go("healthBao_1");
                 }, function (data) {
-                    ionicSuperPopup.show("出错了!", "订单生成失败", "error");
+                    ionicSuperPopup.show("出错了!", "请先创建默认地址", "error");
                 });
             }else{
                 ionicSuperPopup.show("出错了!", "请先创建默认地址", "error");
