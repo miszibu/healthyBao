@@ -37,7 +37,7 @@ angular.module("app.healthyBaoCtrl", [])
                 $state.go("healthBao_4");
         };
     })
-    .controller("pageTwoCtrl", function ($scope, defaultService, $http, $state) {
+    .controller("pageTwoCtrl", function ($scope, defaultService, $http, $state,ionicSuperPopup) {
         $scope.orderList=defaultService.searchOrderList();
         var promise = defaultService.searchOrderList();
         promise.then(function (data) {
@@ -61,6 +61,20 @@ angular.module("app.healthyBaoCtrl", [])
             else if (index == 4)
                 $state.go("healthBao_4");
         };
+        $scope.deleteOrder = function (order) {
+            var promise = defaultService.deleteOrder(order);
+            promise.then(function (data) {
+                for(var i=0;i<$scope.orderList.length;i++){
+                    if($scope.orderList[i]._id==data._id){
+                        $scope.orderList.splice(i,1);
+                        break;
+                    }
+                }
+                ionicSuperPopup.show("恭喜您","成功删除订单","success")
+            }, function (data) {
+                ionicSuperPopup.show("错误", "无法删除改订单", "error");
+            })
+        }
     })
     .controller("pageThreeCtrl", function ($scope, defaultService, $state) {
         if (defaultService.getUser() == null || defaultService.getUser().length < 1)

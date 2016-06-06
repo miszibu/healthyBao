@@ -9,7 +9,7 @@
 			<div class='row'>
 				<span class="col-xs-3" id='first-1'>订单已完成</span>
 				<span class="col-xs-7" id='first-2'>- {{order.showTime}}</span>
-				<i class="fa fa-trash fa-2x col-xs-2 "></i>
+				<i class="fa fa-trash fa-2x col-xs-2 " ng-click="deleteOrder(order)"></i>
 				<img src="../img/humberger.jpg" class="col-xs-3">
 				<h4 id='name' class="col-xs-9">{{order.bussinessname}}  <i class="fa fa-angle-right fa-lg"></i></h4>
 				<div class="col-xs-9 line" ></div>

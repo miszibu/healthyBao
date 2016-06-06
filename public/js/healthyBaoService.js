@@ -186,6 +186,21 @@ angular.module("app.healthyBaoService", [])
                     deferred.reject(data);
                 });
                 return deferred.promise;
+            },
+            deleteOrder: function (order) {
+                var deferred = $q.defer();
+                var param = {order:order};
+                $http.post(hostip +'order/deleteOrder',param).success(function (data) {
+                    if (data.code == 0) {
+                        console.log(data.returnValue);
+                        deferred.resolve(data.returnValue);
+                    } else {
+                        deferred.reject(data.errorReason);
+                    }
+                }).error(function (data) {
+                    deferred.reject(data);
+                });
+                return deferred.promise;
             }
         }
         return service;
